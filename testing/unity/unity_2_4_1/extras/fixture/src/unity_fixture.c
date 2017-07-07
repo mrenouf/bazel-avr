@@ -6,7 +6,7 @@
  * ========================================== */
 
 #include "unity_fixture.h"
-#include "unity_internals.h"
+#include "testing/unity/unity_2_4_1/src/unity_internals.h"
 #include <string.h>
 
 struct UNITY_FIXTURE_T UnityFixture;
