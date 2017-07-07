@@ -1,3 +1,6 @@
+# Simple Unit Testing for C
+# https://github.com/ThrowTheSwitch/Unity/archive/v2.4.1.zip
+# LICENSE: MIT
 
 VERSION = "unity_2_4_1"
 
