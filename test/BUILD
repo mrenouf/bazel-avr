@@ -1,4 +1,4 @@
-load("@avr_tools//avr_gcc:hex.bzl", "hex", "eeprom")
+load("@avr_tools//avr_gcc:hex.bzl", "hex", "eeprom", "listing")
 
 cc_binary (
     name = "app",
@@ -17,6 +17,11 @@ eeprom(
     name = "eeprom",
     src = ":app",
 
+)
+
+listing(
+    name = "listing",
+    src = ":app",
 )
 
 #genrule (
