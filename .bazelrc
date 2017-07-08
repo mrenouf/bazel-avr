@@ -6,3 +6,5 @@ build:328p --define PROGR=arduino
 build:328p --copt -Os
 build:328p --copt -DF_CPU=16000000
 build:328p --cxxopt -std=c++11
+
+test --test_output=all
