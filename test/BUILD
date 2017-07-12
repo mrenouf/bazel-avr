@@ -1,4 +1,4 @@
-load("@avr_tools//avr_gcc:hex.bzl", "hex", "eeprom", "listing")
+load("@avr_tools//tools/avr:hex.bzl", "hex", "eeprom", "listing")
 
 cc_binary (
     name = "app",
