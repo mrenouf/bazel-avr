@@ -5,7 +5,7 @@
 
 http_archive(
     name = "avr_tools",
-    sha256 = "ee44e5c1a8f475d3c4865f15f844151b0894c834e81cf00940cb1f110e8d437e",
+    sha256 = "557b1a523cc9b835d7e330487dc7d900a2efec3ab1c90fff20f4df742d052db1",
     strip_prefix = "bazel-avr-tools-master",
     urls = [
         "https://github.com/mrenouf/bazel-avr-tools/archive/master.zip",
