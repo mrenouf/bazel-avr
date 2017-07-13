@@ -1,4 +1,4 @@
-load("@avr_tools//avr_gcc:hex.bzl", "hex", "eeprom", "listing")
+load("@avr_tools//tools/avr:hex.bzl", "hex", "eeprom", "listing")
 
 config_setting(
     name = "avr",
@@ -8,7 +8,7 @@ config_setting(
 )
 
 cc_library (
-    name = "byte_buffer",   
+    name = "byte_buffer",
     srcs = ["byte_buffer.c"],
     hdrs = ["byte_buffer.h"],
     copts = select({
@@ -40,7 +40,7 @@ cc_test(
 )
 
 cc_library (
-    name = "ptr_buffer",   
+    name = "ptr_buffer",
     srcs = ["ptr_buffer.c"],
     hdrs = ["ptr_buffer.h"],
     copts = select({
@@ -54,7 +54,7 @@ cc_library (
 )
 
 listing(name = "ptr_buffer_listing", src = ":ptr_buffer_test")
- 
+
 cc_binary(
     name = "ptr_buffer_test",
     srcs = ["ptr_buffer_test.c"],
