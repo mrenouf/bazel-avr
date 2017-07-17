@@ -26,6 +26,7 @@ config_setting(
 cc_binary(
     name = "delay_switch",
     srcs = ["delay_switch.c"],
+    deps = ["//common:port_macros"],
     copts = select({
         ":avr": ["-mmcu=$(MCU)"],
         "//conditions:default": [],
