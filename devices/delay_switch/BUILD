@@ -2,7 +2,7 @@ load("@avr_tools//tools/avr:hex.bzl", "hex", "eeprom", "listing")
 
 
 # Written for Adafruit Trinket (ATTiny 85)
-# 
+#
 # Functions:
 #
 # 1. Idle state: output off
@@ -37,8 +37,13 @@ cc_binary(
     }),
 )
 
+hex(
+    name = "delay_switch_hex",
+    src = ":delay_switch"
+)
+
 listing(
-        name = "delay_switch_listing", 
-        src = ":delay_switch"
+    name = "delay_switch_listing",
+    src = ":delay_switch"
 )
 
