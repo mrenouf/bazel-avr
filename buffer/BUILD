@@ -53,8 +53,6 @@ cc_library (
     }),
 )
 
-listing(name = "ptr_buffer_listing", src = ":ptr_buffer_test")
-
 cc_binary(
     name = "ptr_buffer_test",
     srcs = ["ptr_buffer_test.c"],
@@ -71,4 +69,82 @@ cc_binary(
         "//testing/unity:unity_framework",
     ],
 )
+
+cc_library (
+    name = "ring_buffer_u8",
+    srcs = ["ring_buffer_u8.c"],
+    hdrs = ["ring_buffer_u8.h"],
+    copts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": ["-DDEBUG"],
+    }),
+    linkopts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+)
+
+cc_test(
+    name = "ring_buffer_u8_test",
+    srcs = ["ring_buffer_u8_test.c"],
+    size = "small",
+    deps = [
+        ":ring_buffer_u8",
+        "//testing/unity:unity_framework",
+    ],
+)
+
+cc_library (
+    name = "ring_buffer_u16",
+    srcs = ["ring_buffer_u16.c"],
+    hdrs = ["ring_buffer_u16.h"],
+    copts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": ["-DDEBUG"],
+    }),
+    linkopts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+)
+
+cc_test(
+    name = "ring_buffer_u16_test",
+    srcs = ["ring_buffer_u16_test.c"],
+    size = "small",
+    deps = [
+        ":ring_buffer_u16",
+        "//testing/unity:unity_framework",
+    ],
+)
+
+cc_binary (
+    name = "ring_buffer_u8_sample",
+    srcs = ["ring_buffer_u8_sample.c"],
+    deps = [":ring_buffer_u8"],
+    copts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+    linkopts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+)
+
+
+cc_binary (
+    name = "ring_buffer_u16_sample",
+    srcs = ["ring_buffer_u16_sample.c"],
+    deps = [":ring_buffer_u16"],
+    copts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+    linkopts = select({
+        ":avr": ["-mmcu=$(MCU)"],
+        "//conditions:default": [],
+    }),
+)
+
 
